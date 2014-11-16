@@ -29,42 +29,22 @@ Nicolas Kourtellis, Gianmarco De Francisci Morales, Francesco Bonchi, "Scalable 
 Command Line Input Parameters:
 ------------------------------
 
-- input path to use on hdfs\\
+- input path to use on hdfs
 - output path to use on hdfs
-
-number of Mappers to split the sources: e.g., 1, 10, 100 etc. Rule of thumb: the larger the graph (i.e., number of roots to test), the larger should be this number.
-
-number of Reducers to collect the output
-
-Number of vertices in graph
-
-Number of edges in graph
-
-Graph file (edge list, tab delimited) (full path)
-
-File with edges to be added (tab delimited) (full path). Note: this version handles only edges between existing vertices in the graph.
-
-Number of random edges added
-
-Experiment iteration (in case of multiple experiments)
-
-Use combiner or not (true/false)
-
-Output path for file with stats
-
-Output path for file with final betweenness values
-
-
+- number of Mappers to split the sources: e.g., 1, 10, 100 etc. Rule of thumb: the larger the graph (i.e., number of roots to test), the larger should be this number.
+- number of Reducers to collect the output
+- number of vertices in graph
+- number of edges in graph
+- graph file (edge list, tab delimited) (full path)
+- file with edges to be added (tab delimited) (full path). Note: this version handles only edges between existing vertices in the graph.
+- number of random edges added
+- experiment iteration (in case of multiple experiments)
+- use combiner or not (true/false)
+- output path for file with stats
+- output path for file with final betweenness values
 
 Example of execution call:
 
-hadoop jar MapReduce_OptimizedBrandesAdditions_DO_JUNG.jar
--libjars collections-generic-4.01.jar,jung-graph-impl-2.0.1.jar,jung-api-2.0.1.jar
--Dmapred.job.map.memory.mb=4096
--Dmapred.job.reduce.memory.mb=4096
--Dmapred.child.java.opts=-Xmx3500m
--Dmapreduce.task.timeout=60000000
--Dmapreduce.job.queuename=QUEUENAME
-input_iterbrandes_additions_nocomb_10k_1 output_iterbrandes_additions_nocomb_10k_1 10 1 10000 55245 10k 10k_randedges 100 1 false times/ betweenness/
+hadoop jar MapReduce_OptimizedBrandesAdditions_DO_JUNG.jar -libjars collections-generic-4.01.jar,jung-graph-impl-2.0.1.jar,jung-api-2.0.1.jar -Dmapred.job.map.memory.mb=4096 -Dmapred.job.reduce.memory.mb=4096 -Dmapred.child.java.opts=-Xmx3500m -Dmapreduce.task.timeout=60000000 -Dmapreduce.job.queuename=QUEUENAME input_iterbrandes_additions_nocomb_10k_1 output_iterbrandes_additions_nocomb_10k_1 10 1 10000 55245 10k 10k_randedges 100 1 false times/ betweenness/
 
 Similar input can be used for the version that handles deletions of edges.
