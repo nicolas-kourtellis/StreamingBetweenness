@@ -30,22 +30,37 @@ Input Parameters:
 ------------------------
 
 Parameters taken at command line:
++++++++++++++++++++++++++++++++++
 
 input path to use on hdfs
+
 output path to use on hdfs
+
 number of Mappers to split the sources: e.g., 1, 10, 100 etc. Rule of thumb: the larger the graph (i.e., number of roots to test), the larger should be this number.
+
 number of Reducers to collect the output
+
 Number of vertices in graph
+
 Number of edges in graph
+
 Graph file (edge list, tab delimited) (full path)
+
 File with edges to be added (tab delimited) (full path). Note: this version handles only edges between existing vertices in the graph.
+
 Number of random edges added
+
 Experiment iteration (in case of multiple experiments)
+
 Use combiner or not (true/false)
+
 Output path for file with stats
+
 Output path for file with final betweenness values
 
+
 Example of execution call:
+++++++++++++++++++++++++++
 
 hadoop jar MapReduce_OptimizedBrandesAdditions_DO_JUNG.jar
 -libjars collections-generic-4.01.jar,jung-graph-impl-2.0.1.jar,jung-api-2.0.1.jar
