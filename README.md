@@ -26,15 +26,11 @@ Reference:
 If you use this software and its relevant features, please make sure to acknowledge the appropriate studies, by citing:
 Nicolas Kourtellis, Gianmarco De Francisci Morales, Francesco Bonchi, "Scalable Online Betweenness Centrality in Evolving Graphs", http://arxiv.org/abs/1401.6981
 
-Input Parameters:
-------------------------
+Command Line Input Parameters:
+------------------------------
 
-Parameters taken at command line:
-+++++++++++++++++++++++++++++++++
-
-input path to use on hdfs
-
-output path to use on hdfs
+- input path to use on hdfs\\
+- output path to use on hdfs
 
 number of Mappers to split the sources: e.g., 1, 10, 100 etc. Rule of thumb: the larger the graph (i.e., number of roots to test), the larger should be this number.
 
@@ -59,8 +55,8 @@ Output path for file with stats
 Output path for file with final betweenness values
 
 
+
 Example of execution call:
-++++++++++++++++++++++++++
 
 hadoop jar MapReduce_OptimizedBrandesAdditions_DO_JUNG.jar
 -libjars collections-generic-4.01.jar,jung-graph-impl-2.0.1.jar,jung-api-2.0.1.jar
